@@ -2,7 +2,7 @@
     "id": "net.displaycal.DisplayCAL",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "20.08",
+    "runtime-version": "21.08",
     "rename-desktop-file": "displaycal.desktop",
     "rename-icon": "displaycal",
     "copy-icon": true,
