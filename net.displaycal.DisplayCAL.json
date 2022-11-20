@@ -2,7 +2,7 @@
     "id": "net.displaycal.DisplayCAL",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "21.08",
+    "runtime-version": "22.08",
     "rename-desktop-file": "displaycal.desktop",
     "rename-icon": "displaycal",
     "copy-icon": true,
@@ -21,6 +21,9 @@
         "--talk-name=org.gnome.Mutter.DisplayConfig",
         "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.gnome.SettingsDaemon.Power"
+    ],
+    "cleanup": [
+        "/share/man"
     ],
     "modules": [
         "shared-modules/python2.7/python-2.7.json",
@@ -74,6 +77,16 @@
         {
             "name": "python-wxPython",
             "buildsystem": "simple",
+            "build-options": {
+                "arch": {
+                    "aarch64": {
+                        "ldflags": "-L/usr/lib/aarch64-linux-gnu"
+                    },
+                    "x86_64": {
+                        "ldflags": "-L/usr/lib/x86_64-linux-gnu"
+                    }
+                }
+            },
             "build-commands": [
                 "pip install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} wxPython"
             ],
@@ -161,7 +174,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "python setup.py build_ext -i",
-                "python setup.py install"
+                "python setup.py install --skip-instrument-configuration-files"
             ],
             "post-install": [
                 "./export-app.sh displaycal-apply-profiles apply-profiles",
