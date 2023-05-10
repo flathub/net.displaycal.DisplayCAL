@@ -1,0 +1,9 @@
+attrdict3
+build
+certifi
+distro
+numpy
+Pillow
+PyChromecast
+Send2Trash
+zeroconf==0.39.4

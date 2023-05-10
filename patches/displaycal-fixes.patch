@@ -1,19 +1,10 @@
---- DisplayCAL-3.8.9.3/misc/net.displaycal.DisplayCAL.appdata.xml	2018-04-25 09:34:42.000000000 -0400
-+++ DisplayCAL-3.8.9.3/misc/net.displaycal.DisplayCAL.appdata.xml-new	2020-12-18 12:20:43.446397551 -0500
-@@ -26,6 +26,7 @@
- 			<caption>Interactive display adjustment</caption>
- 		</screenshot>
- 	</screenshots>
-+	<content_rating type="oars-1.1" />
- 	<url type="homepage">${URL}</url>
- 	<url type="bugtracker">${URL}issues/</url>
- 	<url type="help">${URL}#toc</url>
---- a/DisplayCAL/worker.py	2019-12-12 17:36:56.000000000 -0500
-+++ b/DisplayCAL/worker.py	2021-03-20 11:16:30.188692532 -0400
-@@ -1139,5 +1139,5 @@
- 		else:
- 			paths = os.defpath.split(os.pathsep)
- 			python = (which("python2.7", paths) or which("python2.6", paths) or
--					  "/usr/bin/env python")
-+					  "/app/bin/python")
- 	return (python, pythonpath)
+--- displaycal-py3/dist/net.displaycal.DisplayCAL.appdata.xml-orig	2023-05-12 19:47:47.879509438 -0400
++++ displaycal-py3/dist/net.displaycal.DisplayCAL.appdata.xml	2023-05-12 19:48:32.883386037 -0400
+@@ -41,6 +41,7 @@
+             <caption>Interactive display adjustment</caption>
+         </screenshot>
+     </screenshots>
++    <content_rating type="oars-1.1" />
+     <url type="homepage">https://displaycal.net/</url>
+     <url type="bugtracker">https://displaycal.net/issues/</url>
+     <url type="help">https://displaycal.net/#toc</url>
