@@ -134,12 +134,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/eoyilmaz/displaycal-py3/releases/download/3.9.10/DisplayCAL-3.9.10.tar.gz",
-                    "sha256": "a031c355bd33b800b8f723df98d7bbc6e14a680d414591abef95f0b0baae807b"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/displaycal-fixes.patch"
+                    "url": "https://github.com/eoyilmaz/displaycal-py3/releases/download/3.9.12/DisplayCAL-3.9.12.tar.gz",
+                    "sha256": "071c2f04e0ff683d4b1999bd20417313fa26b5dfa1b9a9b3c78d62fc07b5c37b"
                 },
                 {
                     "type": "script",
