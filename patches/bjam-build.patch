@@ -1,0 +1,60 @@
+diff --git a/execunix.c b/execunix.c
+index 3ae4c76..426763c 100755
+--- a/execunix.c
++++ b/execunix.c
+@@ -44,6 +44,8 @@
+ # include <errno.h>
+ 
+ # ifdef USE_EXECUNIX
++# include <unistd.h>
++# include <sys/wait.h>
+ 
+ # ifdef OS_OS2
+ # define USE_EXECNT
+@@ -102,7 +104,7 @@ execcmd(
+ {
+ 	int pid;
+ 	int slot;
+-	const char *argv[ MAXARGC + 1 ];	/* +1 for NULL */
++	char * argv[ MAXARGC + 1 ];	/* +1 for NULL */
+ 
+ # ifdef USE_EXECNT
+ 	char *p;
+diff --git a/fileunix.c b/fileunix.c
+index 4c9a5a6..eb86d02 100755
+--- a/fileunix.c
++++ b/fileunix.c
+@@ -39,6 +39,8 @@
+ 
+ # ifdef USE_FILEUNIX
+ 
++#include <unistd.h>
++
+ # if defined( OS_SEQUENT ) || \
+      defined( OS_DGUX ) || \
+      defined( OS_SCO ) || \
+diff --git a/make1.c b/make1.c
+index 3f7f14a..1b1955c 100755
+--- a/make1.c
++++ b/make1.c
+@@ -49,6 +49,8 @@
+  * 12/03/02 (seiwald) - fix odd includes support by grafting them onto depends
+  */
+ 
++#include <unistd.h>
++
+ # include "jam.h"
+ 
+ # include "lists.h"
+diff --git a/mkjambase.c b/mkjambase.c
+index 504e1ca..744993e 100755
+--- a/mkjambase.c
++++ b/mkjambase.c
+@@ -24,6 +24,7 @@
+ # include <stdio.h>
+ # include <string.h>
+ 
++int
+ main( int argc, char **argv, char **envp )
+ {
+ 	char buf[ 1024 ];
