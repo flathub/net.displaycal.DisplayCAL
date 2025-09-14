@@ -135,8 +135,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/eoyilmaz/displaycal-py3/releases/download/3.9.16/DisplayCAL-3.9.16.tar.gz",
-                    "sha256": "7e68a36e4c43e8066482acc57a3efa03fd4544d7955757f2d8ea854e562d4314"
+                    "url": "https://github.com/eoyilmaz/displaycal-py3/releases/download/3.9.17/DisplayCAL-3.9.17.tar.gz",
+                    "sha256": "715f31d47c7e29052138eceac3ff3d420a19f7ef36be1c06ae11b5dcaa44f55c"
                 },
                 {
                     "type": "script",
