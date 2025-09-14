@@ -2,7 +2,7 @@
     "id": "net.displaycal.DisplayCAL",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "rename-desktop-file": "displaycal.desktop",
     "rename-icon": "displaycal",
     "copy-icon": true,
@@ -65,7 +65,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/argyllcms-tiff-lzma.patch"
+                    "paths": [
+                        "patches/argyllcms-tiff-lzma.patch",
+                        "patches/argyllcms-build.patch"
+                    ]
                 },
                 {
                     "type": "shell",
