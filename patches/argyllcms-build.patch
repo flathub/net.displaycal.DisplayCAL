@@ -7,7 +7,7 @@ index 157cd56..e7be5af 100755
  	# UNIX defaults
  
 -	CCFLAGS			?= $(CPPFLAGS) -g -DUNIX -D_THREAD_SAFE -pipe -fPIC ;	# -fwrapv ??
-+	CCFLAGS			?= $(CPPFLAGS) -std=c11 -g -DUNIX -D_THREAD_SAFE -D_DEFAULT_SOURCE -pipe -fPIC ;	# -fwrapv ??
++	CCFLAGS			?= $(CPPFLAGS) -std=gnu11 -g -DUNIX -D_THREAD_SAFE -pipe -fPIC ;	# -fwrapv ??
  	CCOPTFLAG		?= -O2 ;		
  	CCDEBUGFLAG		?= -g ;		
  	CCPROFFLAG		?= ;		
