@@ -94,7 +94,7 @@
                 }
             },
             "build-commands": [
-                "pip install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} wxPython"
+                "pip install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} wxPython --no-build-isolation"
             ],
             "sources": [
                 {
@@ -108,7 +108,7 @@
             "name": "python-dbus",
             "buildsystem": "simple",
             "build-commands": [
-                "pip install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} dbus-python"
+                "pip install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} dbus-python --no-build-isolation"
             ],
             "sources": [
                 {
