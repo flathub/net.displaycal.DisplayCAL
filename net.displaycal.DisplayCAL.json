@@ -9,7 +9,6 @@
     "command": "displaycal",
     "finish-args": [
         "--share=ipc",
-        /* X11 is required even with Wayland. Not as a fallback */
         "--socket=x11",
         "--socket=wayland",
         "--device=all",
@@ -60,13 +59,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.argyllcms.com/Argyll_V3.3.0_src.zip",
-                    "sha256": "69db1c9ef66f8cacbbbab4ed9910147de6100c3afd17a0a8c12e6525b778e8ce"
+                    "url": "https://www.argyllcms.com/Argyll_V3.5.0_src.zip",
+                    "sha256": "f8576ce5589fd15620abb73ff049ea31f55ddbd1bba6d1ffa87452658e7bc85f"
                 },
                 {
                     "type": "patch",
                     "paths": [
-                        "patches/argyllcms-tiff-lzma.patch",
                         "patches/argyllcms-build.patch"
                     ]
                 },
@@ -118,6 +116,8 @@
                 }
             ]
         },
+        "python3-modules.json",
+        "python3-setuptools.json",
         {
             "name": "displaycal",
             "buildsystem": "simple",
@@ -125,7 +125,8 @@
                 "cflags": "-Wno-error=implicit-function-declaration"
             },
             "build-commands": [
-                "pip install --prefix=/app --root=/ --no-build-isolation .",
+                "python -m build",
+                "pip install --prefix=/app --root=/ dist/displaycal-3.9.18-py3-none-any.whl",
                 "./export-app.sh displaycal-apply-profiles apply-profiles",
                 "./export-app.sh displaycal-vrml-to-x3d-converter vrml-to-x3d-converter",
                 "./export-app.sh displaycal-synthprofile synthprofile",
@@ -138,8 +139,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/eoyilmaz/displaycal-py3/releases/download/3.9.17/DisplayCAL-3.9.17.tar.gz",
-                    "sha256": "715f31d47c7e29052138eceac3ff3d420a19f7ef36be1c06ae11b5dcaa44f55c"
+                    "url": "https://github.com/eoyilmaz/displaycal-py3/archive/refs/tags/3.9.18.tar.gz",
+                    "sha256": "4863e1d3e433029afb579fd3214169d2434a858af47f1494b200226ac2e52100"
                 },
                 {
                     "type": "script",
